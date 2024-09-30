@@ -1,28 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: aqua;
+/* Header Start */
+
+.header {
+  background-color: rgb(255, 60, 60);
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+  z-index: 40;
+  position: relative; /* Add this */
+  height: 160px;
 }
+
+.title-container {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+
+.title {
+  position: absolute;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 60px;
+  height: 60px;
+  color: #ffcb05;
+  letter-spacing: -2px;
+  z-index: 20;
+}
+
+.title-overlay {
+  position: relative;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 60px;
+  height: 60px;
+  letter-spacing: -2px;
+  -webkit-text-stroke-width: 10px;
+  -webkit-text-stroke-color: #3c5aa6;
+}
+
+.pokeball {
+  position: absolute;
+  margin-left: 15px;
+  left: 300px;
+  top: 10px;
+
+  img {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 35px
+  }
+}
+
+/* Header End */
+
+body {
+  background-color: rgb(240, 240, 240);
+}
+
+.margin {
+  margin-top: 50px;
+}
+
+/* Search Container & Grass */
+
+.search-type-container {
+  position: absolute;
+  background-image: url(/public/img/grass-long.webp);
+  background-position: bottom;
+  background-size: 1800px;
+  background-repeat: repeat-x;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  top: 10px;
+  height: 150px;
+  width: 100%;
+  z-index: 80;
+  border-bottom: rgb(255, 255, 255) 5px solid;
+
+  label {
+    margin-right: 10px;
+    color: azure;
+    text-shadow: 2px 2px 2px #000000;
+  }
+
+  input, select {
+    border: darkgreen 2px solid;
+    padding: 4px;
+    margin-top: 80px;
+    border-radius: 8px;
+  }
+
+}
+
+/* Search Container & Grass */
+
+/* Pokemon Cards */
 
 
 .pokemon-display-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.background-colour {
+  height: 180px;
+  width: 90%;
+  border: 20px;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  background-image: url(/public/img/pokemon-background.png);
+  background-position: bottom;
+  background-size: 150px;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 100%;
+}
+
+.name-number {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+h2 {
+  font-family: "DM sans", sans-serif;
+  color: rgb(255, 255, 255);
+  font-style: italic;
+  font-weight: 800;
+  text-shadow: 2px 2px 2px #000000;
+  font-size: 20px;
 }
 
 .pokemon-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 5px solid red;
+  border-radius: 20px;
+  height: 400px;
 
   img {
-    width: 30%;
+    position: absolute;
+    bottom: 16px;
+    max-width: 70%;
+    max-height: 95%;
+  }
+}
+
+.pokemon-details {
+  background-color: rgba(255, 255, 255, 0.467);
+  width:90%;
+  height: 145px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: top;
+  flex-direction: column;
+  align-items: center;
+
+  h4 {
+    font-family: "DM sans", sans-serif;
+    color: rgb(52, 52, 52);
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
   }
 
+  p {
+    font-family: "DM sans", sans-serif;
+    color: rgb(52, 52, 52);
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+.footer-container {
+  background-color: rgb(255, 60, 60);
+  position: relative;
+  height: 160px;
+
+  .footer {
+    position: absolute;
+    background-image: url(/public/img/grass-long.webp);
+    background-position: bottom;
+    background-size: 1800px;
+    background-repeat: repeat-x;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    top: 10px;
+    height: 150px;
+    width: 100%;
+    z-index: 80;
+  }
+
+}
+
+.footer-margin {
+  width: 100%;
+  height: 80px;
+}
+
+ /* End of home */
+
+ /* Single Pokemon */
+
+.single-pokemon {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .back {
+    top: -55px;
+    left: 40px;
+    position: absolute;
+    z-index: 100;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    font-family: "DM sans", sans-serif;
+    color: rgb(52, 52, 52);
+    font-weight: 600;
+    font-size: 14px;
+    font-style: italic;
+    border: darkgreen 2px solid;
+   }
+}
+
+.left-container {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  h1 {
+      font-family: "Bricolage Grotesque", sans-serif;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    font-weight: 900;
+    text-shadow: 2px 2px 2px #000000;
+    font-size: 50px;
+    padding: 16px;
+  }
+
+  img {
+    height: 80%;
+    width: 80%;
+  }
+}
+
+.right-container {
+  width: 50%;
+  border-left: #ffffff 5px solid;
+
+  .name-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  color: rgb(255, 255, 255);
+  font-style: italic;
+  font-weight: 900;
+  text-shadow: 2px 2px 2px #000000;
+  font-size: 50px;
+  padding: 16px;
+}
+
+}
+
+.right-container-details {
+  position: relative;
+  background-color: #ffffff50;
+  margin: 28px;
+  padding: 20px;
+  border-radius: 28px;
+
+  .pokemon-sprite-container {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  p {
+    font-family: "DM sans", sans-serif;
+    color: rgb(52, 52, 52);
+    font-weight: 600;
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+}
+
+.sounds {
+  background-color: #ffffff50;
+  margin: 28px;
+  padding: 20px;
+  border-radius: 28px;
+  height: 80px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button {
+  width: 40%;
+  height: 100%;
+  border-radius: 10px;
+  font-family: "DM sans", sans-serif;
+  color: rgb(52, 52, 52);
+  font-weight: 600;
+  font-size: 14px;
+  font-style: italic;
+  border: darkgreen 2px solid;
+}
+
+ /* Responsiveness */
+
+/* For tablet screens (up to 992px) */
+@media (max-width: 992px) {
+  .pokemon-display-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards across */
+  }
+
+  .single-pokemon {
+    position: relative;
+  }
+
+  .left-container, .right-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:start;
+    height: 100%;
+    padding-bottom: 100px;
+    border: none;
+
+    h1 {
+      font-size: 30px;
+    }
+
+  }
+
+  .single-pokemon {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-container-details {
+    width: 90%;
+  }
+  
+
+}
+
+/* For mobile screens (up to 600px) */
+@media (max-width: 600px) {
+  .pokemon-display-grid {
+    grid-template-columns: 1fr; /* 1 card across */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .search-type-container {
+    position: absolute;
+    background-image: url(/public/img/grass-long.webp);
+    background-position: bottom;
+    background-size: 1800px;
+    background-repeat: repeat-x;
+    padding: 20px;
+    display: flex;
+    margin-bottom: 20px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    top: 10px;
+    height: 150px;
+    width: 100%;
+    z-index: 80;
+    border-bottom: rgb(255, 255, 255) 5px solid;
+  
+    label {
+      margin-right: 10px;
+      margin-top: 60px;
+      color: azure;
+      text-shadow: 2px 2px 2px #000000;
+    }
+  
+    input, select {
+      border: darkgreen 2px solid;
+      padding: 4px;
+      border-radius: 8px;
+      margin-top: 5px;
+      width: 100%;
+    }
+  
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #search-container, #type-container {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-container {
+    width: 100%;
+  }
+
+  .right-container {
+    width: 100%;
+    border-top: #ffffff 5px solid;
+    border-left: none;
+  }
+
+  .single-pokemon {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
 }
